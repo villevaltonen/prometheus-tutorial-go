@@ -4,8 +4,17 @@
 - Docker
 - Docker Compose
 
-### Run
-`docker-compose up`
+### Usage
+```bash
+# Build
+docker-compose build
+
+# Run (use -d for detached mode)
+docker-compose up
+
+# Stop (if running in detached mode)
+docker-compose down
+```
 
 ### Links
 - [Prometheus: Getting started](https://prometheus.io/docs/prometheus/latest/getting_started/)
