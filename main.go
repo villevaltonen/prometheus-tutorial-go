@@ -28,7 +28,7 @@ func main() {
 
 func hello() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		log.Println("hello asd called")
+		log.Println("Hello world")
 		counter.Inc()
 		w.Write([]byte(fmt.Sprintf("OK")))
 	}
