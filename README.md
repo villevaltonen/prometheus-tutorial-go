@@ -1,4 +1,4 @@
-# Prometheus-tutorial-go
+# prometheus-tutorial-go
 
 ### Requirements
 - Docker
