@@ -13,3 +13,15 @@ RUN go build -o main .
 
 ## start application
 CMD ["/app/main"]
+
+## create the runtime container
+FROM alpine:3.14
+
+## copy the binary from the base image
+COPY --from=base /app/main /bin/main
+
+## use a non-root user
+RUN adduser --disabled-password -u 1000 user
+USER user
+
+ENTRYPOINT [ "/bin/main" ]

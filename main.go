@@ -10,7 +10,7 @@ import (
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 )
 
-var counter prometheus.Counter = prometheus.NewCounter(prometheus.CounterOpts{Name: "hello_world_counter"})
+var counter = prometheus.NewCounter(prometheus.CounterOpts{Name: "hello_world_counter"})
 
 func main() {
 	prometheus.MustRegister(counter)
@@ -28,7 +28,7 @@ func main() {
 
 func hello() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		log.Println("Hello world")
+		log.Println("Hello world!")
 		counter.Inc()
 		w.Write([]byte(fmt.Sprintf("OK")))
 	}
