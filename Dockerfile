@@ -11,9 +11,6 @@ RUN go mod download
 ## build app
 RUN go build -o main .
 
-## start application
-CMD ["/app/main"]
-
 ## create the runtime container
 FROM alpine:3.14
 
